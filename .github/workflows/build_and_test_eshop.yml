@@ -120,12 +120,17 @@ jobs:
       - name: Install Ansible
         run: pip3 install ansible boto boto3
 
+      - name: Export SSH private key
+        run: |
+          echo "${{ secrets.SSH_KEY }}" > devops.pem
+          chmod 400 devops.pem
+
       - name: Run playbook
         uses: dawidd6/action-ansible-playbook@v2
         with:
             playbook: ./ansible/ec2_deploy.yml
             vault_password: ${{secrets.ANSIBLE_VAULT}}
-            key: ${{secrets.SSH_KEY}}
+            key: devops.pem
 
 
 
