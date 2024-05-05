@@ -17,9 +17,9 @@
         network:
           assign_public_ip: yes
         wait: yes
-        aws_access_key: "{{ secrets.ACCESS_KEY }}"
-        aws_secret_key: "{{ secrets.SECRET_KEY }}"
-        security_token: "{{ secrets.SESSION_TOKEN }}"
+        aws_access_key: ${{ secrets.ACCESS_KEY }}
+        aws_secret_key: ${{ secrets.SECRET_KEY }}
+        security_token: ${{ secrets.SESSION_TOKEN }}
       register: ec2_instance_result
 
     - name: Add instance host to group
@@ -57,7 +57,7 @@
 
     - name: Fetch eshop from Git
       git: 
-        repo: 'https://github.com/shtolts/4IT572_docker.git'
+        repo: 'https://github.com/shtolts/4IT572_semestralka.git'
         dest: ./app
 
     - name: Build Eshop Docker image_id
