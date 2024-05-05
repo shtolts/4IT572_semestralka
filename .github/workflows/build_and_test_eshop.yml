@@ -125,6 +125,7 @@ jobs:
         with:
             playbook: ./ansible/ec2_deploy.yml
             vault_password: ${{secrets.ANSIBLE_VAULT}}
+            key: ${{secrets.SSH_KEY}}
 
 
 
