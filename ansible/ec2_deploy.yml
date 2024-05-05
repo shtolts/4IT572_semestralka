@@ -10,12 +10,13 @@
         security_token: "{{ session_token }}"
         filters:
           "tag:Name": "Eshop"
+          instance-state-name: running
         region: us-east-1
       register: ec2_instance_old
 
     - name: Terminate instances that were previously launched
       ec2_instance:
-        state: 'absent'
+        state: "absent"
         aws_access_key: "{{ access_key }}"
         aws_secret_key: "{{ secret_key }}"
         security_token: "{{ session_token }}"
