@@ -17,7 +17,7 @@
         network:
           assign_public_ip: yes
         wait: yes
-        aws_access_key: ${{ secrets.ACCESS_KEY }}
+        aws_access_key: ${{ secrets.WORKFLOW_TOKEN }}
         aws_secret_key: ${{ secrets.SECRET_KEY }}
         security_token: ${{ secrets.SESSION_TOKEN }}
       register: ec2_instance_result
