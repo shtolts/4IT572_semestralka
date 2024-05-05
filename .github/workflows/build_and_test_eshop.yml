@@ -115,7 +115,7 @@ jobs:
       - name: Run playbook
         uses: dawidd6/action-ansible-playbook@v2
         with:
-            playbook: ec2_deploy.yml
+            playbook: ./ansible/ec2_deploy.yml
 
 
 
