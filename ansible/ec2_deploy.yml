@@ -13,7 +13,7 @@
       register: ec2_instance_old
 
     - name: Terminate instances that were previously launched
-      ec2:
+      ec2_instance:
         region: us-east-1
         state: 'absent'
         aws_access_key: "{{ access_key }}"
