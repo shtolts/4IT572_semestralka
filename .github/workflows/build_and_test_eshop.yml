@@ -130,6 +130,6 @@ jobs:
         env:
           ANSIBLE_HOST_KEY_CHECKING: False
         run: |
-          ansible-playbook ec2_deploy.yml --key-file devops.pem --vault-password-file .ansible_vault --user ec2-user --verbose
+          ansible-playbook ./ansible/ec2_deploy.yml --key-file devops.pem --vault-password-file .ansible_vault --user ec2-user --verbose
 
 
